@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="px.jpg">
+  <title>Info - My Profile</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #001f3f, #000814, #000);
+      color: #fff;
+      padding: 60px 20px;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 64, 0.7);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ffff;
+    }
+
+    h2 {
+      color: #00bfff;
+      margin-top: 30px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #00bfff;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px #00ffff;
+      transition: background 0.3s;
+    }
+
+    .resume-btn:hover {
+      background: #00ffff;
+      color: #000;
+    }
+
+    .timeline {
+      margin-top: 20px;
+      border-left: 3px solid #00ffff;
+      padding-left: 20px;
+    }
+
+    .timeline-entry {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .timeline-entry::before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      background: #00ffff;
+      border-radius: 50%;
+    }
+
+    .timeline-entry h3 {
+      margin: 0;
+      font-size: 1.1em;
+      color: #00ffff;
+    }
+
+    .timeline-entry span {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    .profile-photo {
+      display: block;
+      margin: 0 auto 20px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #00ffff;
+      box-shadow: 0 0 25px #00bfff, 0 0 50px #00ffff;
+      border: 4px solid #00bfff;
+    }
+
+    .tabs {
+      margin-top: 30px;
+    }
+
+    .tab-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .tab-buttons button {
+      background: #00bfff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+
+    .tab-buttons button.active {
+      background: #00ffff;
+      color: #000;
+    }
+
+    .tab-content {
+      display: none;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="page.html">ℹ️ Info</a>
+  </nav>
+
+  <div class="container" id="main-content">
+    <img src="px.jpg" alt="Profile Photo" class="profile-photo">
+    <h1>About Me</h1>
+    <p>Hello! I'm a passionate Electronics and Communication Engineering student with a deep curiosity about Automobiles and
+      Embedded systems. I enjoy applying theoretical knowledge to real-world problems through creative and technical
+      projects.</p>
+
+    <a href="https://drive.google.com/drive/folders/1XbaIoYYK7tnD8Q2VFJ5AXYmC-GX7d4Oc?usp=sharing" class="resume-btn" target="_blank">📄 Download Resume</a>
+
+    <div class="tabs">
+      <div class="tab-buttons">
+        <button onclick="showTab('interest')" class="active">Interest</button>
+        <button onclick="showTab('hobby')">Hobbies</button>
+        <button onclick="showTab('specialization')">Specialization</button>
+      </div>
+      <div id="interest" class="tab-content active">
+        <p>My primary interests lie in Electronic Control Units(ECU), and futuristic Internet of Things technologies
+          enabling vehicle connectivity.</p>
+      </div>
+      <div id="hobby" class="tab-content">
+        <p>I enjoy Stargazing, Automobile and Tech blogs, and creating Sci-Fi inspired visuals.</p>
+      </div>
+      <div id="specialization" class="tab-content">
+        <p>I specialize in Embedded system design and embedded IoT hardware programming using Python.</p>
+      </div>
+    </div>
+
+    <h2>Academic Background</h2>
+    <p>Bachelor of Engineering in Electronics & Communication, specializing in Embedded
+      systems, and Automotive electronics.</p>
+
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>Python & Embedded C</li>
+      <li>Matlab & Simulink simulation</li>
+      <li>HTML, CSS, Web page designs</li>
+      <li>Satellite Communication Systems</li>
+    </ul>
+
+    <h2>Education & Work Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <h3>. Electronics & Communication Engineering</h3>
+        <span>2023 – Present | Mepco Schlenk Engineering College, Sivakasi, TN</span>
+        <p>Bachelor of Engineering in Electronics & Communication</p>
+        <p>Specializing in Embedded systems, Automotive electronics, and IoT projects.</p>
+      </div>
+    
+    </div>
+
+    <h2>Certifications</h2>
+    <ul>
+      <li>NPTEL Star: Enthusiast – NPTEL</li>
+      <li>Roadmap for patent creation – NPTEL</li>
+      <li>Simulation of Communication Systems using Matlab – NPTEL</li>
+      <li>Introduction to Internet of Things – NPTEL</li>
+      <li>Digital design with Verilog – NPTEL</li>
+      <li>Electronics System Design: Hands-on Circuits & PCB Design with CAD Software – NPTEL</li>
+      <li>Introduction to Industry 4.0 & Industrial Internet of Things – NPTEL</li>
+      <li>Fundamentals of Artificial Intelligence – NPTEL</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>Email: sanjaymahesh16@gmail.com</p>
+    <p>Phone: +91-9489937121</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/sanjaymahesh" target="_blank"
+        style="color:#00ffff;">linkedin.com/in/sanjaymahesh</a></p>
+  </div>
+
+  <script>
+    // Scroll animation reveal
+    window.addEventListener("scroll", () => {
+      const content = document.getElementById("main-content");
+      const trigger = window.innerHeight * 0.9;
+      const top = content.getBoundingClientRect().top;
+      if (top < trigger) content.classList.add("visible");
+    });
+
+    // Tab switcher
+    function showTab(tabId) {
+      const buttons = document.querySelectorAll(".tab-buttons button");
+      const contents = document.querySelectorAll(".tab-content");
+      buttons.forEach(btn => btn.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      document.getElementById(tabId).classList.add("active");
+      event.target.classList.add("active");
+    }
+  </script>
+
+</body>
+
+</html>
